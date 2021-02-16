@@ -6,10 +6,14 @@ const ingredients = [
     'Зелень',
     'Приправы',
   ];
-const listRef = document.querySelector('#ingredients');
-const newElement = ingredients.forEach((elm) => 
-{const element = document.createElement('li');
-element.textContent = elm;
-listRef.append(element)
-}
-    )
+
+let ingrRef = ingredients.map((value) =>
+{
+  let item = document.createElement('li');
+  item.textContent = value;
+  return item;
+});
+const getNodeRefToString = function (nodesRef) {
+return nodesRef.map(element => element.outerHTML).join('');
+}    
+document.querySelector("#ingredients").insertAdjacentHTML('afterbegin',getNodeRefToString(ingrRef));
