@@ -13,7 +13,7 @@ let ingrRef = ingredients.map((value) =>
   item.textContent = value;
   return item;
 });
-const getNodeRefToString = function (nodesRef) {
-return nodesRef.map(element => element.outerHTML).join('');
+const getNodeListToString = function (nodesList) {
+return nodesList.map(element => element.outerHTML).join('');
 }    
-document.querySelector("#ingredients").insertAdjacentHTML('afterbegin',getNodeRefToString(ingrRef));
+document.querySelector("#ingredients").insertAdjacentHTML('afterbegin',getNodeListToString(ingrRef));
